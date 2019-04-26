@@ -11,9 +11,20 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Login_RememberUsernameChkbox.Checked)
+        if (Session["Username"] != null)
         {
             Login_Username.Text = Session["Username"].ToString();
+            Commodity_Link.Visible = true;
+            LoginSignin_Link.Visible = true;
+            Member_Link.Visible = false;
+            Logout_Btn.Visible = true;
+        }
+        else
+        {
+            Commodity_Link.Visible = false;
+            Member_Link.Visible = false;
+            LoginSignin_Link.Visible = true;
+            Logout_Btn.Visible = false;
         }
     }
 
@@ -32,8 +43,14 @@ public partial class _Default : System.Web.UI.Page
                 reader.Read();
                 Session["Username"] = reader["Username"].ToString();
                 Session["Password"] = reader["Password"].ToString();
+                Session["isLogin"] = 1;
             }
             SqlDataSource1.Dispose();
+
+            if (Login_RememberUsernameChkbox.Checked)
+            {
+                Session["Username"] = Login_Username.Text;
+            }
 
             if (Session["Username"] != null) Response.Redirect("~/Commodity.aspx");
         }
@@ -67,5 +84,11 @@ public partial class _Default : System.Web.UI.Page
     protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
     {
 
+    }
+
+    protected void Logout_Btn_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect(Request.RawUrl);
     }
 }
