@@ -22,7 +22,7 @@ public partial class _Default : System.Web.UI.Page
         if (Page.IsValid)
         {
             string username = Login_Username.Text;
-            string password = Login_Password.Text; Login_Username.Text
+            string password = Login_Password.Text;
             SqlDataSource1.SelectParameters["Username"].DefaultValue = username;
             SqlDataSource1.SelectParameters["Password"].DefaultValue = password;
             SqlDataSource1.DataSourceMode = SqlDataSourceMode.DataReader;

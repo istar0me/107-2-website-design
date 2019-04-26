@@ -30,18 +30,33 @@
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True"></asp:CommandField>
-                    <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id"></asp:BoundField>
+                    <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="Id"></asp:BoundField>
 
-                    <asp:BoundField DataField="time" HeaderText="time" SortExpression="time"></asp:BoundField>
-                    <asp:BoundField DataField="title" HeaderText="title" SortExpression="title"></asp:BoundField>
-                    <asp:BoundField DataField="price" HeaderText="price" SortExpression="price"></asp:BoundField>
+                    <asp:BoundField DataField="time" HeaderText="上架時間" SortExpression="time" DataFormatString="{0:G}"></asp:BoundField>
+                    <asp:BoundField DataField="title" HeaderText="商品名稱" SortExpression="title"></asp:BoundField>
+                    <asp:BoundField DataField="price" HeaderText="售價" SortExpression="price" DataFormatString="{0:C}"></asp:BoundField>
                 </Columns>
             </asp:GridView>
 
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM [Commodity] WHERE ([Id] = @Id)">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM [Commodity] WHERE ([Id] = @Id)" DeleteCommand="DELETE FROM [Commodity] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Commodity] ([Id], [time], [title], [price]) VALUES (@Id, @time, @title, @price)" UpdateCommand="UPDATE [Commodity] SET [time] = @time, [title] = @title, [price] = @price WHERE [Id] = @Id">
+                <DeleteParameters>
+                    <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
+                    <asp:Parameter Name="time" Type="DateTime"></asp:Parameter>
+                    <asp:Parameter Name="title" Type="String"></asp:Parameter>
+                    <asp:Parameter Name="price" Type="String"></asp:Parameter>
+                </InsertParameters>
                 <SelectParameters>
                     <asp:ControlParameter ControlID="GridView1" PropertyName="SelectedValue" Name="Id" Type="Int32"></asp:ControlParameter>
                 </SelectParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="time" Type="DateTime"></asp:Parameter>
+                    <asp:Parameter Name="title" Type="String"></asp:Parameter>
+                    <asp:Parameter Name="price" Type="String"></asp:Parameter>
+                    <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
+                </UpdateParameters>
             </asp:SqlDataSource>
             <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
                 <Fields>
@@ -49,6 +64,7 @@
                     <asp:BoundField DataField="time" HeaderText="time" SortExpression="time"></asp:BoundField>
                     <asp:BoundField DataField="title" HeaderText="title" SortExpression="title"></asp:BoundField>
                     <asp:BoundField DataField="price" HeaderText="price" SortExpression="price"></asp:BoundField>
+                    <asp:CommandField ShowEditButton="True" ShowInsertButton="True" ShowDeleteButton="True"></asp:CommandField>
                 </Fields>
             </asp:DetailsView>
         </div>
