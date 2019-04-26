@@ -73,14 +73,14 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">帳號</span>
                                                     </div>
-                                                    <asp:TextBox ID="Login_Username" runat="server" class="form-control" ValidationGroup="Login"></asp:TextBox><br />
+                                                    <asp:TextBox ID="Login_Username" runat="server" class="form-control" ValidationGroup="Login" MaxLength="12"></asp:TextBox><br />
                                                     <asp:RequiredFieldValidator ID="Login_UserNameRequiredFieldValidator" runat="server" ErrorMessage="請填入使用者名稱" ControlToValidate="Login_Username" Display="None" ValidationGroup="Login"></asp:RequiredFieldValidator>
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">密碼</span>
                                                     </div>
-                                                    <asp:TextBox ID="Login_Password" runat="server" TextMode="Password" class="form-control" ValidationGroup="Login"></asp:TextBox><br />
+                                                    <asp:TextBox ID="Login_Password" runat="server" TextMode="Password" class="form-control" ValidationGroup="Login" MaxLength="12"></asp:TextBox><br />
                                                     <asp:RequiredFieldValidator ID="Login_PasswordRequiredFieldValidator" runat="server" ErrorMessage="請填入密碼" ControlToValidate="Login_Password" Display="None" ValidationGroup="Login"></asp:RequiredFieldValidator>
                                                 </div>
                                                 <div class="input-group mb-3">
@@ -98,21 +98,21 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="Username">帳　　號</span>
                                                     </div>
-                                                    <asp:TextBox ID="Signup_Username" runat="server" class="form-control" placeholder="限英數字，6 ~ 12 碼" ValidationGroup="Signup"></asp:TextBox><br />
+                                                    <asp:TextBox ID="Signup_Username" runat="server" class="form-control" placeholder="限英數字，6 ~ 12 碼" ValidationGroup="Signup" MaxLength="12"></asp:TextBox><br />
                                                     <asp:RequiredFieldValidator ID="Signup_UsernameRequiredFieldValidator" runat="server" ErrorMessage="請填入使用者名稱" ControlToValidate="Signup_Username" Display="None" ValidationGroup="Signup"></asp:RequiredFieldValidator>
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="Password">密　　碼</span>
                                                     </div>
-                                                    <asp:TextBox ID="Signup_Password" runat="server" TextMode="Password" class="form-control" placeholder="限英數字，6 ~ 12 碼" ValidationGroup="Signup"></asp:TextBox><br />
+                                                    <asp:TextBox ID="Signup_Password" runat="server" TextMode="Password" class="form-control" placeholder="限英數字，6 ~ 12 碼" ValidationGroup="Signup" MaxLength="12"></asp:TextBox><br />
                                                     <asp:RequiredFieldValidator ID="Signup_PasswordRequiredFieldValidator" runat="server" ErrorMessage="請填入密碼" ControlToValidate="Signup_Password" Display="None" ValidationGroup="Signup"></asp:RequiredFieldValidator>
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="PasswordComfirm">密碼確認</span>
                                                     </div>
-                                                    <asp:TextBox ID="Signup_PasswordCmp" runat="server" TextMode="Password" class="form-control" placeholder="請再次輸入密碼，並確認是否相同" ValidationGroup="Signup"></asp:TextBox><br />
+                                                    <asp:TextBox ID="Signup_PasswordCmp" runat="server" TextMode="Password" class="form-control" placeholder="請再次輸入密碼，並確認是否相同" ValidationGroup="Signup" MaxLength="12"></asp:TextBox><br />
                                                     <asp:CompareValidator ID="Singup_PasswordCompareValidator" runat="server" ErrorMessage="兩次密碼並不相同，請重新檢查" ControlToCompare="Signup_PasswordCmp" ControlToValidate="Signup_Password" Display="None" ValidationGroup="Signup"></asp:CompareValidator>
                                                 </div>
                                                 <asp:Button ID="SignupBtn" class="btn btn-block btn-primary" runat="server" Text="註冊" ValidationGroup="Signup" OnClick="SignupBtn_Click" />
