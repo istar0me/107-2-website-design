@@ -169,11 +169,6 @@
             <div>
             </div>
 
-            <%-- container --%>
-            <%--<div class="container-fluid px-0" style="margin: auto">--%>
-            <%--<div class="row">--%>
-
-            <%-- carousel --%>
             <div id="carousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -228,8 +223,6 @@
                     </div>
                 </div>
             </div>
-            <%--</div>--%>
-            <%--</div>--%>
     </form>
 </body>
 </html>

@@ -13,14 +13,16 @@ public partial class _Default : System.Web.UI.Page
     {
         if (Session["Username"] != null)
         {
+            // 已登入
             Login_Username.Text = Session["Username"].ToString();
             Commodity_Link.Visible = true;
-            LoginSignin_Link.Visible = true;
-            Member_Link.Visible = false;
+            Member_Link.Visible = true;
+            LoginSignin_Link.Visible = false;
             Logout_Btn.Visible = true;
         }
         else
         {
+            // 未登入
             Commodity_Link.Visible = false;
             Member_Link.Visible = false;
             LoginSignin_Link.Visible = true;

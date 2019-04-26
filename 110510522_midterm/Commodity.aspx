@@ -43,8 +43,9 @@
                 </div>
             </nav>
 
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding:20px">
                 <div class="row">
+                    <div class="col-sm-2"></div>
                     <div class="col-sm-8">
                         <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' DeleteCommand="DELETE FROM [Commodity] WHERE [Id] = @original_Id" InsertCommand="INSERT INTO [Commodity] ([Id], [time], [title], [price]) VALUES (@Id, @time, @title, @price)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Commodity]" UpdateCommand="UPDATE [Commodity] SET [time] = @time, [title] = @title, [price] = @price WHERE [Id] = @original_Id">
                             <DeleteParameters>
@@ -63,18 +64,14 @@
                                 <asp:Parameter Name="original_Id" Type="Int32"></asp:Parameter>
                             </UpdateParameters>
                         </asp:SqlDataSource>
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CssClass="table table-striped table-borderless table-sm">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CssClass="table table-striped table-borderless border-top-0 border-right-0 border-bottom-0 border-left-0">
                             <Columns>
                                 <asp:CommandField ShowSelectButton="True"></asp:CommandField>
-                                <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="Id"></asp:BoundField>
-
-                                <asp:BoundField DataField="time" HeaderText="上架時間" SortExpression="time" DataFormatString="{0:G}"></asp:BoundField>
                                 <asp:BoundField DataField="title" HeaderText="商品名稱" SortExpression="title"></asp:BoundField>
                                 <asp:BoundField DataField="price" HeaderText="售價" SortExpression="price" DataFormatString="{0:C}"></asp:BoundField>
                             </Columns>
                         </asp:GridView>
-                    </div>
-                    <div class="col-sm-4">
+                        <hr />
                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM [Commodity] WHERE ([Id] = @Id)" DeleteCommand="DELETE FROM [Commodity] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Commodity] ([Id], [time], [title], [price]) VALUES (@Id, @time, @title, @price)" UpdateCommand="UPDATE [Commodity] SET [time] = @time, [title] = @title, [price] = @price WHERE [Id] = @Id">
                             <DeleteParameters>
                                 <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
@@ -95,12 +92,12 @@
                                 <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
                             </UpdateParameters>
                         </asp:SqlDataSource>
-                        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource2" CssClass="table table-striped table-borderless table-sm">
+                        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource2" CssClass="table table-striped table-borderless border-top-0 border-right-0 border-bottom-0 border-left-0">
                             <Fields>
-                                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id"></asp:BoundField>
-                                <asp:BoundField DataField="time" HeaderText="time" SortExpression="time"></asp:BoundField>
-                                <asp:BoundField DataField="title" HeaderText="title" SortExpression="title"></asp:BoundField>
-                                <asp:BoundField DataField="price" HeaderText="price" SortExpression="price"></asp:BoundField>
+                                <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="Id"></asp:BoundField>
+                                <asp:BoundField DataField="time" HeaderText="上架時間" SortExpression="time"></asp:BoundField>
+                                <asp:BoundField DataField="title" HeaderText="商品名稱" SortExpression="title"></asp:BoundField>
+                                <asp:BoundField DataField="price" HeaderText="售價" SortExpression="price"></asp:BoundField>
                                 <asp:CommandField ShowEditButton="True" ShowInsertButton="True" ShowDeleteButton="True"></asp:CommandField>
                             </Fields>
                         </asp:DetailsView>
