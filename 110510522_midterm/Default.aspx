@@ -15,6 +15,16 @@
     <script src="Scripts/bootstrap.js"></script>
 
     <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+        body {
+            font-family: ‘Noto Sans TC’, sans-serif;
+        }
+
+        h1, h3 {
+            text-shadow: 0 0 5px #000000;
+        }
+
         .carousel-item {
             height: 100vh;
             min-height: 350px;

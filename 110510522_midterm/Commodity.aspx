@@ -13,6 +13,13 @@
     <script src="Scripts/umd/popper.js"></script>
     <script src="Scripts/umd/popper-utils.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+        body {
+            font-family: ‘Noto Sans TC’, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

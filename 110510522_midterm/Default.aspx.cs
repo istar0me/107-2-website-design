@@ -11,7 +11,13 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Username"] != null)
+        if (Session["RememberUsername"] != null)
+        {
+            Login_Username.Text = Session["Username"].ToString();
+            Login_RememberUsernameChkbox.Checked = true;
+        }
+        
+        if (Session["isLogin"] != null)
         {
             // 已登入
             Login_Username.Text = Session["Username"].ToString();
@@ -51,10 +57,10 @@ public partial class _Default : System.Web.UI.Page
 
             if (Login_RememberUsernameChkbox.Checked)
             {
-                Session["Username"] = Login_Username.Text;
+                Session["RememberUsername"] = "1";
             }
 
-            if (Session["Username"] != null) Response.Redirect("~/Commodity.aspx");
+            if (Session["isLogin"] != null) Response.Redirect("~/Commodity.aspx");
         }
     }
 
@@ -90,7 +96,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Logout_Btn_Click(object sender, EventArgs e)
     {
-        Session.Abandon();
+        Session["isLogin"] = null;
         Response.Redirect(Request.RawUrl);
     }
 }

@@ -9,7 +9,7 @@ public partial class news : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Username"] == null)
+        if (Session["isLogin"] == null)
         {
             Response.Redirect("~/Default.aspx");
         }
@@ -24,7 +24,7 @@ public partial class news : System.Web.UI.Page
 
     protected void Logout_Btn_Click(object sender, EventArgs e)
     {
-        Session["Username"] = null;
+        Session["isLogin"] = null;
         Response.Redirect(Request.RawUrl);
     }
 }

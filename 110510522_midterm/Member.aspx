@@ -13,6 +13,13 @@
     <script src="Scripts/umd/popper.js"></script>
     <script src="Scripts/umd/popper-utils.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+        body {
+            font-family: ‘Noto Sans TC’, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -63,7 +70,7 @@
 
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Username" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CssClass="table table-striped table-borderless border-top-0 border-right-0 border-bottom-0 border-left-0">
                             <Columns>
-                                <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" ShowSelectButton="True"></asp:CommandField>
+                                <asp:CommandField ShowSelectButton="True"></asp:CommandField>
                                 <asp:BoundField DataField="Username" HeaderText="帳號" ReadOnly="True" SortExpression="Username"></asp:BoundField>
                                 <asp:BoundField DataField="Password" HeaderText="密碼" SortExpression="Password"></asp:BoundField>
                             </Columns>
