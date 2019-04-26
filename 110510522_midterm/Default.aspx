@@ -24,7 +24,7 @@
                 <asp:CheckBox ID="Login_RememberUsernameChkbox" runat="server" Text="記住帳號" />
             </div>
             <asp:Button ID="LoginBtn" runat="server" Text="登入" ValidationGroup="Login" />
-            <asp:Button ID="Login_ClearBtn" runat="server" Text="清除" />
+            <asp:Button ID="Login_ClearBtn" runat="server" Text="清除" OnClick="Login_ClearBtn_Click" />
             <asp:ValidationSummary ID="Login_ValidationSummary" runat="server" HeaderText="登入驗證錯誤：" ShowMessageBox="True" ShowSummary="False" ValidationGroup="Login" />
         </div>
         <hr />
@@ -49,7 +49,7 @@
                 <asp:CheckBox ID="Signup_RememberUsernameChkbox" runat="server" Text="記住帳號" />
             </div>
             <asp:Button ID="SignupBtn" runat="server" Text="註冊" ValidationGroup="Signup" />
-            <asp:Button ID="Signup_ClearBtn" runat="server" Text="清除" />
+            <asp:Button ID="Signup_ClearBtn" runat="server" Text="清除" OnClick="Signup_ClearBtn_Click" />
             <asp:ValidationSummary ID="Signup_ValidationSummary" runat="server" HeaderText="驗證錯誤：" ShowMessageBox="True" ShowSummary="False" ValidationGroup="Signup" />
         </div>
     </form>

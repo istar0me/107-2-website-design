@@ -11,4 +11,17 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+
+    protected void Login_ClearBtn_Click(object sender, EventArgs e)
+    {
+        Login_Username.Text = "";
+        Login_UserNameRequiredFieldValidator.Text = "";
+    }
+
+    protected void Signup_ClearBtn_Click(object sender, EventArgs e)
+    {
+        Signup_Username.Text = "";
+        Signup_Password.Text = "";
+        Signup_PasswordCmp.Text = "";
+    }
 }
