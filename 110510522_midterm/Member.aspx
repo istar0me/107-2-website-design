@@ -28,7 +28,7 @@
                         <li class="nav-item">
                             <asp:HyperLink ID="Commodity_Link" class="nav-link" runat="server" NavigateUrl="~/Commodity.aspx">商品列表</asp:HyperLink>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <asp:HyperLink ID="Member_Link" class="nav-link" runat="server" NavigateUrl="~/Member.aspx">會員管理</asp:HyperLink>
                         </li>
                     </ul>

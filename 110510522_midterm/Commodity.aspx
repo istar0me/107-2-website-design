@@ -25,7 +25,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <asp:HyperLink ID="Commodity_Link" class="nav-link" runat="server" NavigateUrl="~/Commodity.aspx">商品列表</asp:HyperLink>
                         </li>
                         <li class="nav-item">
