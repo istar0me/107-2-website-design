@@ -13,11 +13,23 @@
     <script src="Scripts/umd/popper.js"></script>
     <script src="Scripts/umd/popper-utils.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+
+    <style>
+        .carousel-item {
+            height: 100vh;
+            min-height: 350px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top" id="navbar">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" id="navbar">
                 <a class="navbar-brand" href="Default.aspx">唬皮拍賣</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -155,61 +167,69 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
             <div>
-        </div>
-        
-        <%-- container --%>
-            <div class="container-fluid" style="margin:auto">
-                <div class="row">
+            </div>
 
-                    <%-- carousel --%>
-                    <div id="carousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="media/carousel/1.jpg" alt="First slide">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Apple Macbook Pro 13"(early 2012)</h5>
-                                    <p>$16666</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="media/carousel/2.jpg" alt="Second slide">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>小米方盒子藍芽喇叭</h5>
-                                    <p>$666</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="media/carousel/3.jpg" alt="Second slide">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Lenovo ThinkPad L460 i5/8G/512G</h5>
-                                    <p>$16666</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="media/carousel/4.jpg" alt="Second slide">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Redmi Note 7 4G/64G</h5>
-                                    <p>$6666</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="media/carousel/5.jpg" alt="Second slide">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>小米 18W 快速充電器</h5>
-                                    <p>$245</p>
-                                </div>
-                            </div>
+            <%-- container --%>
+            <%--<div class="container-fluid px-0" style="margin: auto">--%>
+            <%--<div class="row">--%>
+
+            <%-- carousel --%>
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                    <li data-target="#carousel" data-slide-to="3"></li>
+                    <li data-target="#carousel" data-slide-to="4"></li>
+                </ol>
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="media/carousel/1.jpg" alt="First slide" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Apple Macbook Pro 13"(early 2012)</h1>
+                            <h3>$16666</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="media/carousel/2.jpg" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>小米方盒子藍芽喇叭</h1>
+                            <h3>$666</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="media/carousel/3.jpg" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Lenovo ThinkPad L460 i5/8G/512G</h1>
+                            <h3>$16666</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="media/carousel/4.jpg" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Redmi Note 7 4G/64G</h1>
+                            <h3>$6666</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="media/carousel/5.jpg" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>小米 18W 快速充電器</h1>
+                            <h3>$245</h3>
                         </div>
                     </div>
                 </div>
             </div>
+            <%--</div>--%>
+            <%--</div>--%>
     </form>
 </body>
 </html>
